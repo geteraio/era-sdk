@@ -1,0 +1,56 @@
+{
+  "name": "@getera/cli",
+  "version": "1.0.0",
+  "description": "Era from your terminal: sign in, read and run every Era action, build and deploy sites to getera.site, connect AI assistants over MCP.",
+  "license": "MIT",
+  "author": "Era (https://getera.io)",
+  "homepage": "https://docs.getera.io/en/cli",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geteraio/era-sdk.git",
+    "directory": "packages/era-cli"
+  },
+  "bugs": {
+    "url": "https://github.com/geteraio/era-sdk/issues"
+  },
+  "type": "module",
+  "keywords": [
+    "era",
+    "getera",
+    "cli",
+    "crm",
+    "ecommerce",
+    "mcp"
+  ],
+  "bin": {
+    "era": "dist/era.mjs"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "bun build src/main.ts --target node --format esm --outfile dist/era.mjs",
+    "dev": "bun run src/main.ts",
+    "prepublishOnly": "bun run build",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "node --test src/arguments.test.ts",
+    "embed": "bun run scripts/embed.ts",
+    "embed:check": "bun run scripts/embed.ts --check"
+  },
+  "peerDependencies": {
+    "@getera/templates": ">=1.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@getera/templates": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

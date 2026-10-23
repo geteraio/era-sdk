@@ -1,0 +1,49 @@
+{
+  "name": "@getera/sdk",
+  "version": "1.0.0",
+  "description": "Era's typed API client: every model and every action of every Era module. Node, Bun, Deno, edge and browser.",
+  "license": "MIT",
+  "author": "Era (https://getera.io)",
+  "homepage": "https://docs.getera.io/en/api/sdk",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geteraio/era-sdk.git",
+    "directory": "packages/era-sdk"
+  },
+  "bugs": {
+    "url": "https://github.com/geteraio/era-sdk/issues"
+  },
+  "type": "module",
+  "keywords": [
+    "era",
+    "getera",
+    "sdk",
+    "api",
+    "crm",
+    "ecommerce",
+    "bookings"
+  ],
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "generate": "bun run scripts/generate.ts",
+    "check": "bun run scripts/generate.ts --check",
+    "build": "bun run scripts/build.ts",
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

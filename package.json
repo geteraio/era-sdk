@@ -1,0 +1,18 @@
+{
+  "name": "era-sdk-workspace",
+  "private": true,
+  "type": "module",
+  "description": "Era's developer packages: @getera/sdk, @getera/cli, @getera/brain.",
+  "license": "MIT",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "build": "bun run --cwd packages/era-sdk build && bun run --cwd packages/era-brain build && bun run --cwd packages/era-cli build",
+    "typecheck": "bun run --cwd packages/era-sdk typecheck && bun run --cwd packages/era-brain typecheck && bun run --cwd packages/era-cli typecheck",
+    "test": "bun run --cwd packages/era-cli test"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.0",
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.3"
+  }
+}
