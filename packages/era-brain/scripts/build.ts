@@ -22,6 +22,7 @@ if (!built.success) {
 // Types: the two SDK files the entry re-exports, then the entry — one self-contained index.d.ts.
 const strip = (src: string) =>
   src
+    .replace(/\r\n/g, '\n') // a CRLF checkout (Windows) must strip the same lines
     .replace(/^import[^\n]*\n/gm, '')
     .replace(/^export (type )?\* from[^\n]*\n/gm, '')
     .replace(/^export \{ EraError \}\n/m, '')
